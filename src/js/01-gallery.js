@@ -1,15 +1,15 @@
 // Add imports above this line
-import { galleryItems } from "./gallery-items";
+import { galleryItems } from './gallery-items';
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const gallerryRef = document.querySelector(".js-gallery");
+const gallerryRef = document.querySelector('.js-gallery');
 
 createMarkup(galleryItems, gallerryRef);
 
 function createMarkup(arr, list) {
-  markup = arr
+  const markup = arr
     .map(
       ({ preview, original, description }) =>
         `<li class="gallety__item">
@@ -23,13 +23,13 @@ function createMarkup(arr, list) {
 </a>
 </li>`
     )
-    .join("");
+    .join('');
 
   list.innerHTML = markup;
 }
 
-const lightbox = new SimpleLightbox(".js-gallery a", {
-  captionsData: "alt",
+const lightbox = new SimpleLightbox('.js-gallery a', {
+  captionsData: 'alt',
   captionDelay: 250,
 });
 
